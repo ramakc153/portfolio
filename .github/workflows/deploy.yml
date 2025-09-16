@@ -16,9 +16,9 @@ jobs:
           username: ${{secrets.SECRET_USERNAME}}
           key: ${{secrets.SECRET_SSH_KEY}}
           script: |
-            APP_PATH=/home/${{secrets.USERNAME}}/portfolio/portfolio
+            APP_PATH=/home/${{secrets.SECRET_USERNAME}}/portfolio/portfolio
             GO_PATH=/usr/local/go/bin/go
-            cd /home/${{secrets.USERNAME}}/portfolio
+            cd /home/${{secrets.SECRET_USERNAME}}/portfolio
             git pull origin main
             ${GO_PATH} build .
             sudo nohup ${APP_PATH} &
