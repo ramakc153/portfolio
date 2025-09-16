@@ -21,4 +21,4 @@ jobs:
             cd /home/${{secrets.SECRET_USERNAME}}/portfolio
             git pull origin main
             ${GO_PATH} build .
-            systemctl --user start portfolio.service
+            sudo systemctl start portfolio.service
